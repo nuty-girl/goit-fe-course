@@ -1,49 +1,133 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit    
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+ }
 
-.wrapper {
+ body {
+     font-family: 'Playfair Display', serif;
+     font-size: 14px;
+     color: #626262;
+      }
+
+.container {
+     width: 900px;
+     margin: 0 auto;
+ }
+ 
+/*.wrapper {
     width: 900px;
-    margin: 0 auto;
-}
-
+    margin: 0 auto;*/
+    
 .header {
     padding: 77px 0 0 0;
-    margin: 0 0 103px 0;
+    margin-bottom: 98px;
 }
 
 .nav-list {
-   text-align: center; 
+   text-align: center;
+   width: 572px;
+   margin: 0 auto;
+   font-size: 0;
 }
+
+.nav-list a:hover,
+.nav-list a:focus {
+    color: lightskyblue
+}
+
+/*.nav-list li:not(:last-child) {
+    margin-right: 108px;
+}*/
 
 .list-item {
     list-style: none;
     display: inline-block;
-   
+}
+
+.list-item:not(:last-child) {
+    margin-right: 102px;
 }
 
 .nav-link {
  text-decoration: none;
- color: #626262;   
+ color: #626262;
+ font-size: 14px;
+ line-height: 24px;
+ text-transform: uppercase;   
+}
+
+.article-list {
+    font-size: 0;
+    margin-bottom: 52px;
 }
 
 .article-item {
     list-style: none;
     display: inline-block;
     width: 420px;
-    margin: 0 0 130px 0;
+    margin: 0 0 128px 0;
+    font-size: 14px;
 }
 
-.article-item-r {
-   margin-right: calc(900px - 420px * 2 - 8px);
+.article-item:not(:nth-child(2n)) {
+    margin-right: 60px;
 }
-.section-title,
+
+.article-item:nth-last-child(-n+2) {
+    margin-bottom: 0;
+}
+
+
+/*.article-item-r {
+   margin-right: calc(900px - 420px * 2 - 7px);
+}*/
+
 img {
-    margin: 0 0 30px 0;
+   display: block;
+   margin-bottom: 31px;
+
+}
+
+   
+
+
+.section-title {
+    margin: 0 0 25px 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color: #b4ad9e;
+    line-height: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 .article-title {
     margin: 0 0 40px 0;
+    font-size: 30px;
+    line-height: 36px;
 }
 
+.article-text {
+    line-height: 24px;
+}
+
+.article-link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    color: #626262;
+    line-height: 60px;
+    width: 164px;
+    height: 60px;
+    border: 1px solid;
+    margin: 0 auto 70px auto;
+}
