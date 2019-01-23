@@ -34,7 +34,7 @@ html {
 
 .nav-list {
    text-align: center;
-   width: 572px;
+   min-width: 572px;   
    margin: 0 auto;
    font-size: 0;
 }
@@ -58,11 +58,16 @@ html {
 }
 
 .nav-link {
+display: block;
  text-decoration: none;
  color: #626262;
  font-size: 14px;
  line-height: 24px;
  text-transform: uppercase;   
+}
+
+.wrapper {
+padding-bottom: 70px;
 }
 
 .article-list {
@@ -119,7 +124,7 @@ img {
     line-height: 24px;
 }
 
-.article-link {
+.article-button {
     display: block;
     text-decoration: none;
     text-align: center;
@@ -128,6 +133,7 @@ img {
     line-height: 60px;
     width: 164px;
     height: 60px;
+    background-color: #fff;
     border: 1px solid;
-    margin: 0 auto 70px auto;
+    margin: 0 auto;
 }
