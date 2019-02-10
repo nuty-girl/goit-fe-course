@@ -20,9 +20,7 @@ body {
 }
 
 .wrapper {
-    width: 1920px;
-    margin: 0 auto;
-    background-color: #ffffff;
+    width: 100%;
 }
 
 .container {
@@ -32,11 +30,11 @@ body {
 
 .header {
     display: flex;
-    min-height: 66px;
-    align-items: flex-end;
+    min-height: 98px;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 112px;
+    margin-bottom: 80px;
 }
 
 .logo {
@@ -72,24 +70,26 @@ body {
     font-size: 14px;
     font-weight: 400;
     position: relative;
+    transition: color 200ms linear;
 }
 
 .nav-link::after {
     display: block;
     content: "";
-    border-bottom: 3px solid rgb(243, 129, 129);
+    border-bottom: 3px solid;
+    color: rgba(243, 129, 129, 0);
     width: 100%;
     position: absolute;
     transform: translateY(10px);
-    visibility: hidden;
+    transition: color 200ms linear;
 }
  
 .nav-link:hover {
-    color: #f38181;
+    color: rgb(243, 129, 129);
 }
 
 .nav-link:hover.nav-link::after {
-    visibility: visible;
+    color: rgba(243, 129, 129, 1);
 }
 
 .section-service {
@@ -211,7 +211,7 @@ body {
 
 
 .section-team {
-    margin-bottom: 80px;
+    padding-bottom: 80px;
 }
 
 .section-team_text {
@@ -273,11 +273,12 @@ body {
     z-index: 1;
     background-image: linear-gradient(to top, rgba(252, 227, 138, .9), rgba(243, 129, 129, .9));
     box-shadow: 10px 10px rgba(149, 225, 211, 1);
+    transition: transform 200ms linear;
 }
 
 .team-img {
     display: block;
-    /*box-shadow: 10px 10px rgba(149, 225, 211, 1);*/
+    transition: transform 200ms linear;
 }
 
 .team-list_item:hover .overlay {
@@ -306,6 +307,11 @@ body {
     width: 56px;
     background-color: #fce38a;
     display: flex;
+    transition: background-color 200ms linear;
+}
+
+.social-item:hover {
+    background-color: #95e1d3;
 }
 
 .social-item_link {
@@ -350,7 +356,7 @@ body {
     min-height: 64px;
     justify-content: space-between;
     align-items: center;
-    box-shadow: inset 0 1px 0  rgb(229, 229, 229);
+    border-top: 1px solid rgb(229, 229, 229);
 }
 
 .address {
@@ -359,8 +365,10 @@ body {
 }
 
 .pre {
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
+    font-style: normal;
     width: 100%;
 }
 
