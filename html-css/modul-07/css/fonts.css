@@ -1,0 +1,45 @@
+/* montserrat-regular - cyrillic_latin */
+@font-face {
+    font-family: 'MontserratRegular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+         url('../fonts/MontserratRegular/montserrat-v12-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/MontserratRegular/montserrat-v12-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+  /* montserrat-900 - cyrillic_latin */
+@font-face {
+    font-family: 'MontserratBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat Black'), local('Montserrat-Black'),
+         url('../fonts/MontserratBold/montserrat-v12-cyrillic_latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/MontserratBold/montserrat-v12-cyrillic_latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+  /* roboto-slab-regular - cyrillic_latin */
+@font-face {
+    font-family: 'RobotoSlab';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+         url('../fonts/RobotoSlab/roboto-slab-v7-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/RobotoSlab/roboto-slab-v7-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../fonts/MerriweatherRegular/Merriweather-Italic.woff') format('woff'),
+         url('../fonts/MerriweatherRegular/Merriweather-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Marck Script';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/MarckScript/MarckScript-Regular.woff') format('woff'),
+         url('../fonts/MarckScript/MarckScript-Regular.woff2') format('woff2');
+}
