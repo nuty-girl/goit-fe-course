@@ -63,7 +63,8 @@ html {
     text-align: center;
     width: 9rem;
     height: 3.6rem;
-    background: transparent;
+    line-height: 3.6rem;
+    /*background: transparent;*/
     border: 0.2rem solid rgba(255, 255, 255, 0);
     border-radius: 3.6rem;
 }
@@ -75,7 +76,6 @@ html {
 .promo-section{
     color: var(--promo-font-color);
     font-family: var(--main-font-family);
-    height: 17.4rem;
     width: 28.2rem;
     margin: 0 auto; 
 }
@@ -96,7 +96,6 @@ html {
 }
 
 .section-link {
-    display: block;
     color: var(--promo-font-color);
     font-family: var(--main-font-family);
     font-size: var(--main-font-size);
@@ -106,6 +105,10 @@ html {
     background-color: rgb(255, 78, 80);
     width: 28.2rem;
     height: 4rem;
+}
+
+.section-link:hover {
+    border: 0.2rem solid rgba(255, 255, 255, 1);
 }
 
 .partners-wrapper {
@@ -129,10 +132,6 @@ html {
     margin-bottom: 2.8rem;
 }
 
-.partners-item {
-    margin-bottom: 2.6rem;
-}
-
 .partners-card {
     width: 20.2rem;
     margin: 0 auto;
@@ -149,10 +148,10 @@ html {
 .partners-img {
     display: block;
     margin: 0 auto;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     background-color: rgb(249, 249, 249);
-    /*width: 12.1rem;
-    height: 12.1rem;*/
+    width: 12.1rem;
+    height: 12.1rem;
 }
 
 .figure-img::after {
@@ -216,5 +215,8 @@ html {
     color: rgb(255, 78, 80);
 }
 
-
+.partners-section-btn:hover {
+    background-color: rgb(255, 78, 80);
+    color: rgb(255, 255, 255);
+}
   
