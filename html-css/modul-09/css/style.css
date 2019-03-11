@@ -1,0 +1,223 @@
+@import './libs/fonts.css';
+@import './libs/vars.css';
+@import './libs/utils.css';
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-width: 32rem;
+    height: 100%;
+    text-align: center;
+}
+
+.promo-wrapper {
+    background-color:  rgb(26, 25, 21);
+    background: url(../image/Banner.jpg) center/cover no-repeat;
+    min-height: 54rem;
+}
+
+.header {
+    padding-top: 2rem;
+    min-height: 19rem;
+    /*width: 18.6rem;*/
+    margin: 0 auto 3.6rem auto;
+    display: flex; 
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.title-logo {
+    margin: 0;
+    order: 1;
+}
+
+.logo-link {
+    font-family: var(--main-font-family);
+    font-size: 2rem;
+    color: var(--promo-font-color);
+}
+
+.header-btn_list {
+    display: flex;
+   /*  width: 18.8rem; */
+}
+
+.header-btn {
+    color: var(--promo-font-color);
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    text-align: center;
+    width: 9rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0);
+    border-radius: 3.6rem;
+}
+
+.header-btn:hover {
+    border: 0.2rem solid rgba(255, 255, 255, 1);
+}
+
+.promo-section{
+    color: var(--promo-font-color);
+    font-family: var(--main-font-family);
+    /* width: 28.2rem; */
+    /* margin: 0 auto; */ 
+}
+
+.promo-section-title {
+    font-size: 3rem;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+}    
+
+.section-subtitle {
+    font-family: var(--text-font-family);
+    font-size: 1.8rem;
+    line-height: normal;
+    padding: 0 3.2rem 0 3.2rem;
+    margin-bottom: 1.8rem;
+}
+
+.section-link {
+    color: var(--promo-font-color);
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    text-align: center;
+    line-height: 3.6rem;
+    border-radius: 2rem;
+    background-color: rgb(255, 78, 80);
+    width: 28.2rem;
+    margin: 0 auto;
+    height: 4rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0);
+}
+
+.section-link:hover {
+    border: 0.2rem solid rgba(255, 255, 255, 1);
+}
+
+.partners-wrapper {
+    padding: 6.7rem 0 5.7rem 0;
+}
+
+.partners-section {
+   /*  width: 28.4rem;
+    margin: 0 auto; */
+    text-align: center;
+}
+
+.partners-section-title {
+    font-family: var(--main-font-family);
+    font-size: 2.2rem;
+    color: var(--title-font-color);
+    margin-bottom: 1.4rem;
+}
+
+.partners-list {
+    margin-bottom: 2.8rem;
+}
+
+.partners-card {
+    /* width: 20.2rem;*/
+   /*  margin: 0 auto;  */
+    text-align: center;
+}
+
+.figure-img {
+    position: relative;
+    width: 12.1rem;
+    height: 12.1rem;
+    margin: 0 auto 1.6rem auto;
+}
+
+.partners-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: rgb(249, 249, 249);
+    width: 12.1rem;
+    height: 12.1rem;
+}
+
+.figure-img::after {
+    display: block;
+    content: "";
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 0.4rem solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    left: 95%;
+    top: 95%;
+    transform: translate(-75%, -75%);
+    background-image: url(../image/spritesheet.png);
+    background-repeat: no-repeat;
+}
+
+.TV_icon.figure-img::after {
+    background-color: rgb(255, 78, 80);
+    background-position: 0.6rem 0.3rem;
+}
+
+.boutle_icon.figure-img::after {
+    background-color: #ffa507;
+    background-position: -1.96rem 0.3rem;
+}
+
+.cup_icon.figure-img::after {
+    background-color: #1cd7ad;
+    background-position: -4.4rem 0.3rem;
+}
+
+.paperplane_icon.figure-img::after {
+    background-color: #4e73db;
+    background-position: -7.2rem 0.4rem;
+}
+
+.partners-name {
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    color: var(--title-font-color);
+    margin-bottom: 1rem; 
+}
+
+.figcaption-text {
+    font-family: var(--text-font-family);
+    font-size: var(--main-font-size);
+    color: var(--text-font-color);
+}
+
+.partners-section-btn {
+    width: 28.2rem;
+    height: 4rem;
+    border: 0.2rem solid rgb(255, 78, 80);
+    border-radius: 2rem;
+    background-color: rgb(255, 255, 255);
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    line-height: 3.6rem;
+    text-align: center;
+    color: rgb(255, 78, 80);
+}
+
+.partners-section-btn:hover {
+    background-color: rgb(255, 78, 80);
+    color: rgb(255, 255, 255);
+}
+  
