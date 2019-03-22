@@ -1,0 +1,18 @@
+:root {
+
+    font-size: 62.5%;
+    
+    --header-font-color: #ffffff;
+    --title-font-color: #333333;
+    --text-font-color: #999999;
+    --hover-font-color: #fce38a;
+    --main-font-size: 1.4rem;
+    --main-font-family: 'MontserratRegular', sans-serif;
+    --secondary-font-family: 'MontserratBold', sans-serif;
+    --title-font-family: 'KaushanScript', cursive;
+    --team-font-family: 'RobotoRegular', sans-serif;
+    --figcaption-font-family: 'RobotoLightItalic', sans-serif;
+    --linear-gradient: linear-gradient(to top, rgba(252, 227, 138, .9), rgba(243, 129, 129, .9));
+    
+     
+}
