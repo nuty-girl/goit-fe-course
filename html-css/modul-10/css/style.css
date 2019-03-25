@@ -449,7 +449,7 @@ html {
     fill: #ffffff;
 } 
 
-.team__item--img {
+.team__img {
     display: block;
     -webkit-transition: -webkit-transform 200ms linear;
     transition: -webkit-transform 200ms linear;
@@ -458,7 +458,7 @@ html {
     transition: transform 200ms linear, -webkit-transform 200ms linear;
 }
 
-.team__item:hover .team__item--img {
+.team__item:hover .team__img {
     -webkit-transform: translate(-10px, -10px);
         -ms-transform: translate(-10px, -10px);
             transform: translate(-10px, -10px);
