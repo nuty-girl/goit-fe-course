@@ -1,6 +1,6 @@
 'use strict';
 
-/* const ADMIN_PASSWORD = 'm4ng0h4ckz';
+const ADMIN_PASSWORD = 'm4ng0h4ckz';
 let message1;
 const input1 = prompt('Введите Ваш пароль');
 if (input1 === null) {
@@ -35,7 +35,7 @@ if (input === null) {
     alert(resumeMessage);
     //console.log(resumeMessage);
   }
-} */
+}
 
 //------задание 3
 
