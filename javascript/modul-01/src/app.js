@@ -62,6 +62,6 @@ switch (country) {
     console.log('В вашей стране доставка не доступна');
 }
 const message3 = `Доставка в ${country} будет стоить ${price}  кредитов`;
-if (country === true) {
+if (country && price) {
   console.log(message3);
 }
