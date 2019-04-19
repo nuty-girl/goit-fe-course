@@ -35,11 +35,11 @@ let userInput;
 
 while (userInput !== null) {
   userInput = prompt('Введите Ваш пароль:');
+  attemptsLeft -= 1;
   if (passwords.includes(userInput)) {
     alert('Добро пожаловать!');
     break;
   } else if (passwords.includes(userInput) === false && attemptsLeft !== 0) {
-    attemptsLeft = attemptsLeft - 1;
     alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
   } else if (attemptsLeft === 0) {
     alert('У вас закончились попытки, аккаунт заблокирован!');
