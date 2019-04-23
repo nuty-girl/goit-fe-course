@@ -4,26 +4,22 @@ let input;
 
 const numbers = [];
 
-let number;
-
 do {
   input = prompt('Введите число');
-  number = Number.parseInt(input);
   if (input === null) {
     break;
-  } else if (isNaN(number)) {
+  } else if (Number.isNaN(Number(input))) {
     alert('Было введено не число, попробуйте еще раз');
   } else {
-    numbers.push(number);
+    numbers.push(Number(input));
   }
 } while (true);
 
-console.log(numbers);
-
 let total = 0;
-
-for (let i = 0; i < numbers.length; i += 1) {
-  total += numbers[i];
+if (numbers.length >= 1) {
+  for (let number of numbers) {
+    total += number;
+  }
 }
 console.log(total);
 
@@ -33,16 +29,19 @@ const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attemptsLeft = 3;
 let userInput;
 
-while (userInput !== null) {
+while (attemptsLeft > 0) {
   userInput = prompt('Введите Ваш пароль:');
   attemptsLeft -= 1;
   if (passwords.includes(userInput)) {
     alert('Добро пожаловать!');
     break;
-  } else if (passwords.includes(userInput) === false && attemptsLeft !== 0) {
-    alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
+  } else if (userInput === null) {
+    console.log('Отменено пользователем!');
+    break;
   } else if (attemptsLeft === 0) {
     alert('У вас закончились попытки, аккаунт заблокирован!');
     break;
+  } else {
+    alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
   }
 }
