@@ -12,17 +12,22 @@ const isLoginUnique = function(logins, login) {
 
 const addLogin = function(logins, login) {
   if (!isLoginValid(login)) {
-    console.log('Ошибка! Логин должен быть от 4 до 16 символов');
+    return 'Ошибка! Логин должен быть от 4 до 16 символов';
   } else if (isLoginUnique(logins, login)) {
-    console.log('Такой логин уже используется!');
+    return 'Такой логин уже используется!';
   } else {
     logins.push(login);
-    console.log('Логин успешно добавлен!');
+    return 'Логин успешно добавлен!';
   }
 };
 
+console.log(addLogin(logins, 'Ajax'));
+console.log(addLogin(logins, 'robotGoogles'));
+console.log(addLogin(logins, 'Zod'));
+console.log(addLogin(logins, 'jqueryisextremelyfast'));
+
 // Вызовы функции для проверки
-addLogin(logins, 'Ajax'); // 'Логин успешно добавлен!'
-addLogin(logins, 'robotGoogles'); // 'Такой логин уже используется!'
-addLogin(logins, 'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// addLogin(logins, 'Ajax'); // 'Логин успешно добавлен!'
+// addLogin(logins, 'robotGoogles'); // 'Такой логин уже используется!'
+// addLogin(logins, 'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
