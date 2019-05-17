@@ -13,8 +13,7 @@ const notepad = {
     /* Принимает: ничего* Возвращает: все заметки, значение свойства notes */
   },
   findNoteById(id) {
-    for (let i = 0; i < this.notes.length; i += 1) {
-      const note = this.notes[i];
+    for (let note of this.notes) {
       if (note.id === id) {
         return note;
       }
@@ -30,22 +29,18 @@ const notepad = {
      * Возвращает: сохраненную заметку*/
   },
   deleteNote(id) {
-    for (let i = 0; i < this.notes.length; i += 1) {
-      const note = this.notes[i];
-      if (note.id === id) {
-        this.notes.splice(i, 1);
-      }
-    }
-    console.log(notepad);
+    const note = this.findNoteById(id);
+    this.notes.splice(this.notes.indexOf(note), 1);
+
     /* Удаляет заметку по идентификатору из массива notes
      * Принимает: идентификатор заметки* Возвращает: ничего     */
   },
   updateNoteContent(id, updatedContent) {
     let note = this.findNoteById(id);
-    for (const key in updatedContent) {
-      note[key] = updatedContent[key];
-      return note;
-    }
+    note = { ...note, ...updatedContent };
+
+    return note;
+
     /*Обновляет контент заметки
      * updatedContent - объект с полями вида {имя: значение, имя: значение}
      * Свойств в объекте updatedContent может быть произвольное количество
@@ -63,13 +58,11 @@ const notepad = {
   },
   filterNotesByQuery(query) {
     let notesByQuery = [];
-    for (let i = 0; i < this.notes.length; i += 1) {
-      const note = this.notes[i];
-      const noteValues = Object.values(note);
-      console.log(noteValues);
-      const tempQuery = query.toLowerCase();
-      const tempNoteValues = noteValues.join().toLowerCase();
-      if (tempNoteValues.includes(tempQuery)) {
+    for (let note of this.notes) {
+      if (
+        note.title.toLowerCase().includes(query.toLowerCase()) ||
+        note.body.toLowerCase().includes(query.toLowerCase())
+      ) {
         notesByQuery.push(note);
         return notesByQuery;
       }
@@ -81,8 +74,7 @@ const notepad = {
   },
   filterNotesByPriority(priority) {
     const notesByPriority = [];
-    for (let i = 0; i < this.notes.length; i += 1) {
-      const note = this.notes[i];
+    for (let note of this.notes) {
       if (note.priority === priority) {
         notesByPriority.push(note);
         return notesByPriority;
