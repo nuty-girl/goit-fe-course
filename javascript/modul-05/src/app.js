@@ -2,57 +2,55 @@
 
 // Конструктор Notepad при инициализации принимает массив заметок
 const Notepad = function Notepad(notes = []) {
-  (this.notes = notes),
-    (this.getNotes = function() {
-      return this.notes;
-    }),
-    (this.findNoteById = function(id) {
-      for (let note of this.notes) {
-        if (note.id === id) {
-          return note;
-        }
+  this.notes = notes;
+  this.getNotes = function() {
+    return this.notes;
+  };
+  this.findNoteById = function(id) {
+    for (let note of this.notes) {
+      if (note.id === id) {
+        return note;
       }
-    }),
-    (this.saveNote = function(note) {
-      this.notes.push(note);
-      return note;
-    }),
-    (this.deleteNote = function(id) {
-      const note = this.findNoteById(id);
-      this.notes.splice(this.notes.indexOf(note), 1);
-    }),
-    (this.updateNoteContent = function(id, updatedContent) {
-      let note = this.findNoteById(id);
-      note = { ...note, ...updatedContent };
-      console.log(note);
-      return note;
-    }),
-    (this.updateNotePriority = function(id, priority) {
-      let note = this.findNoteById(id);
-      note.priority = priority;
-      return note;
-    }),
-    (this.filterNotesByQuery = function(query) {
-      this.notesByQuery = [];
-      for (let note of this.notes) {
-        if (
-          note.title.toLowerCase().includes(query.toLowerCase()) ||
-          note.body.toLowerCase().includes(query.toLowerCase())
-        ) {
-          this.notesByQuery.push(note);
-          return this.notesByQuery;
-        }
+    }
+  };
+  this.saveNote = function(note) {
+    this.notes.push(note);
+    return note;
+  };
+  this.deleteNote = function(id) {
+    const note = this.findNoteById(id);
+    this.notes.splice(this.notes.indexOf(note), 1);
+  };
+  this.updateNoteContent = function(id, updatedContent) {
+    let note = { ...this.findNoteById(id), ...updatedContent };
+    return note;
+  };
+  this.updateNotePriority = function(id, priority) {
+    let note = this.findNoteById(id);
+    note.priority = priority;
+    return note;
+  };
+  this.filterNotesByQuery = function(query) {
+    this.notesByQuery = [];
+    for (let note of this.notes) {
+      if (
+        note.title.toLowerCase().includes(query.toLowerCase()) ||
+        note.body.toLowerCase().includes(query.toLowerCase())
+      ) {
+        this.notesByQuery.push(note);
+        return this.notesByQuery;
       }
-    }),
-    (this.filterNotesByPriority = function(priority) {
-      this.notesByPriority = [];
-      for (let note of this.notes) {
-        if (note.priority === priority) {
-          this.notesByPriority.push(note);
-          return this.notesByPriority;
-        }
+    }
+  };
+  this.filterNotesByPriority = function(priority) {
+    this.notesByPriority = [];
+    for (let note of this.notes) {
+      if (note.priority === priority) {
+        this.notesByPriority.push(note);
+        return this.notesByPriority;
       }
-    });
+    }
+  };
 };
 
 Notepad.Priority = {
