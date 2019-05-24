@@ -1,7 +1,25 @@
 'use strict';
 
+class Notepad {
+  constructor(notes = []) {
+    this._notes = notes;
+  }
+  get notes() {
+    return this.notes;
+  }
+  static Priority() {}
+  /*
+   * Перенеси свойства и методы конструктора в класс
+   *
+   * Замени метод getNotes геттером, чтобы можно было обратиться как notepad.notes,
+   * для этого создай свойство _notes, в котором храни массив заметок,
+   * а геттер notes возвращает значение этого поля
+   *
+   * Добавь статическое свойство Priority используя ключевое слово static
+   */
+}
 // Конструктор Notepad при инициализации принимает массив заметок
-const Notepad = function Notepad(notes = []) {
+const Notepad = function Notepad() {
   this.notes = notes;
   this.getNotes = function() {
     return this.notes;
@@ -22,7 +40,7 @@ const Notepad = function Notepad(notes = []) {
     this.notes.splice(this.notes.indexOf(note), 1);
   };
   this.updateNoteContent = function(id, updatedContent) {
-    let note = Object.assign(this.findNoteById(id), updatedContent);
+    let note = { ...this.findNoteById(id), ...updatedContent };
     return note;
   };
   this.updateNotePriority = function(id, priority) {
@@ -79,9 +97,9 @@ const initialNotes = [
 const notepad = new Notepad(initialNotes);
 
 /*
- * Смотрю что у меня в заметках после инициализации
- */
-console.log('Все текущие заметки: ', notepad.getNotes());
+  Смотрю что у меня в заметках после инициализации
+*/
+console.log('Все текущие заметки: ', notepad.notes);
 
 /*
  * Добавляю еще 2 заметки и смотрю что получилось
@@ -102,27 +120,21 @@ notepad.saveNote({
   priority: Notepad.Priority.LOW,
 });
 
-console.log('Все текущие заметки: ', notepad.getNotes());
+console.log('Все текущие заметки: ', notepad.notes);
 
 /*
  * Зима уже близко, пора поднять приоритет на покупку одежды
  */
 notepad.updateNotePriority('id-4', Notepad.Priority.NORMAL);
 
-console.log(
-  'Заметки после обновления приоритета для id-4: ',
-  notepad.getNotes(),
-);
+console.log('Заметки после обновления приоритета для id-4: ', notepad.notes);
 
 /*
  * Решил что фреймворки отложу немного, понижаю приоритет
  */
 notepad.updateNotePriority('id-3', Notepad.Priority.LOW);
 
-console.log(
-  'Заметки после обновления приоритета для id-3: ',
-  notepad.getNotes(),
-);
+console.log('Заметки после обновления приоритета для id-3: ', notepad.notes);
 
 /*
  * Решил отфильтровать заметки по слову html
@@ -157,11 +169,11 @@ notepad.updateNoteContent('id-3', {
 
 console.log(
   'Заметки после обновления контента заметки с id-3: ',
-  notepad.getNotes(),
+  notepad.notes,
 );
 
 /*
  * Повторил HTML и CSS, удаляю запись c id-2
  */
 notepad.deleteNote('id-2');
-console.log('Заметки после удаления с id -2: ', notepad.getNotes());
+console.log('Заметки после удаления с id -2: ', notepad.notes);
