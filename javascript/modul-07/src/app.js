@@ -101,11 +101,12 @@ const getUsersByEyeColor = (users, color) => {
 };
 console.log(getUsersByEyeColor(users, 'blue'));
 
+
 const getUsersByGender = (users, gender) => {
-  return users.filter(user => {
-    return user.gender === gender;
-  });
-};
+  return users.filter(user => user.gender === gender).map(user => {
+        return user.name;
+      }); 
+    };
 console.log(getUsersByGender(users, 'male'));
 
 const getInactiveUsers = users => {
@@ -138,14 +139,11 @@ const getTotalBalance = users => {
 };
 console.log(getTotalBalance(users));
 
-const getUsersByFriend = (users, name) => {
-  return users.reduce((allNames, user) => {
-    if (user.friends.includes(name)) {
-      allNames.push(user.name);
-    }
+const getUsersByFriend = (users, name) =>  users.filter(user=>
+  user.friends.includes(name)).reduce((allNames, user) => {
+    allNames.push(user.name);
     return allNames;
-  }, []);
-};
+  },[]) ;
 console.log(getUsersByFriend(users, 'Briana Decker'));
 console.log(getUsersByFriend(users, 'Goldie Gentry'));
 
