@@ -1,3 +1,14 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable strict */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable comma-spacing */
+/* eslint-disable arrow-body-style */
+/* eslint-disable arrow-parens */
+/* eslint-disable no-shadow */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line strict
+
 'use strict';
 
 const users = [
@@ -101,12 +112,13 @@ const getUsersByEyeColor = (users, color) => {
 };
 console.log(getUsersByEyeColor(users, 'blue'));
 
-
 const getUsersByGender = (users, gender) => {
-  return users.filter(user => user.gender === gender).map(user => {
-        return user.name;
-      }); 
-    };
+  return users
+    .filter(user => user.gender === gender)
+    .map(user => {
+      return user.name;
+    });
+};
 console.log(getUsersByGender(users, 'male'));
 
 const getInactiveUsers = users => {
@@ -139,11 +151,14 @@ const getTotalBalance = users => {
 };
 console.log(getTotalBalance(users));
 
-const getUsersByFriend = (users, name) =>  users.filter(user=>
-  user.friends.includes(name)).reduce((allNames, user) => {
-    allNames.push(user.name);
-    return allNames;
-  },[]) ;
+const getUsersByFriend = (users, name) => users
+    .filter(user =>
+      // eslint-disable-next-line implicit-arrow-linebreak
+      user.friends.includes(name))
+    .reduce((allNames, user) => {
+      allNames.push(user.name);
+      return allNames;
+    }, []);
 console.log(getUsersByFriend(users, 'Briana Decker'));
 console.log(getUsersByFriend(users, 'Goldie Gentry'));
 
@@ -168,8 +183,7 @@ console.log(getUsersByFriend(users, 'Goldie Gentry'));
 // console.log(getUniqueSkills(filteredSkills));
 //
 
-const getUniqueSkills = users =>
-  users
+const getUniqueSkills = users => users
     .reduce((allSkills, user) => {
       allSkills.push(...user.skills);
       return allSkills;
@@ -184,8 +198,7 @@ const getUniqueSkills = users =>
 
 console.log(getUniqueSkills(users));
 
-const getNamesSortedByFriendsCount = users =>
-  users
+const getNamesSortedByFriendsCount = users => users
     .map(user => {
       return { name: user.name, friendsCount: user.friends.length };
     })
@@ -196,6 +209,7 @@ const getNamesSortedByFriendsCount = users =>
       return user.name;
     });
 console.log(getNamesSortedByFriendsCount(users));
+// eslint-disable-next-line max-len
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
 // const countedUserFriends = users.map(user => {
