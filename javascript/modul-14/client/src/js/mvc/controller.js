@@ -18,16 +18,33 @@ refs.list.addEventListener('click', editData);
 refs.search.addEventListener('input', filterByText);
 refs.search.addEventListener('blur', resetSearch);
 
+const state = { note: null };
+
 function openModalEditor(event) {
   event.preventDefault();
   openEditor();
+}
+
+function updateData() {
+  const title = refs.title.value;
+  const body = refs.body.value;
+  state.note.title = title;
+  state.note.body = body;
+  const { id } = state.note;
+  notepad.updateNoteContent(id, { title, body });
+  refs.title.value = '';
+  refs.body.value = '';
+  closeEditor();
+  refreshList(notepad.get());
+  state.note = null;
 }
 
 function saveData(event) {
   event.preventDefault();
   if (refs.title.value.length === 0 || refs.body.value.length === 0) {
     notificationError();
-  } else {
+  }
+  if (!state.note) {
     const note = {
       title: refs.title.value,
       body: refs.body.value,
@@ -40,6 +57,9 @@ function saveData(event) {
       .then(() => notepad.notes)
       .then(notes => refreshList(notes))
       .catch(err => console.error(err));
+  }
+  if (state.note) {
+    updateData();
   }
 }
 
@@ -76,13 +96,10 @@ function editData({ target }) {
     const li = target.closest('.note-list__item');
     const { id } = li.dataset;
     const note = notepad.findNoteById(id);
-    const title = li.querySelector('.note__title');
-    const body = li.querySelector('.note__body');
-    title.setAttribute('contenteditable', true);
-    body.setAttribute('contenteditable', true);
-    console.log(title.textContent);
-    note.title = title.textContent;
-    note.body = body.textContent;
-    notepad.updateNoteContent(id, note);
+    const { title, body } = note;
+    refs.title.value = title;
+    refs.body.value = body;
+    state.note = note;
+    openEditor();
   }
 }

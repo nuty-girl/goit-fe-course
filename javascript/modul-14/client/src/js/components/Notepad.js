@@ -4,8 +4,12 @@
 import * as api from '../../services/api';
 
 export default class Notepad {
-  constructor() {
-    this._notes = [];
+  constructor(notes = []) {
+    this._notes = notes;
+  }
+
+  get() {
+    return this._notes;
   }
 
   get notes() {
@@ -30,11 +34,9 @@ export default class Notepad {
     this._notes = this._notes.filter(note => note.id !== id);
   }
 
-  async updateNoteContent(id, updatedContent) {
+  updateNoteContent(id, updatedContent) {
     const note = Object.assign(this.findNoteById(id), updatedContent);
-    const updatedNote = await api.updateNote(id, note);
-    console.log(updatedNote);
-
+    const updatedNote = api.updateNote(id, note);
     return updatedNote;
   }
 
